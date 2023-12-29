@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Actigrafy Analysis {% endblock %}</h1>
+	
+ 
+
+	  <table class="table table-hover">
+		<thead> 
+		<tr>   <!--th scope"col">Plot File </th -->
+			   <th scope"col">edit </th>
+			   <th scope="col">Create File with Regions</th>
+			   <th scope="col">view</th>
+			   <!--th scope"col">Create Regions </th>
+			   <th scope="col">view regions</th -->
+			   <th scope="col">created</th>
+			   <th scope="col">title</th>
+			   <!--th scope="col">content</th>
+			   <th scope="col">raw_name</th>
+			   <th scope="col">raw_start_time</th>
+			   <th scope="col">raw_duration</th>
+			   <th scope="col">raw_uuid</th>
+			   <th scope="col">raw_frequency</th>
+			   <th scope="col">raw_aont</th>
+			   <th scope="col">raw_aofft</th>
+			   <th scope="col">raw_sleep_diary</th>
+			   <th scope="col">file_formats</th -->
+		</tr>    
+		</thead>
+		<tbody>  
+            
+			{% for post in posts %}
+			
+			
+		<tr>   
+			   <!--td> <a href="{{ url_for('plot_file', id=post['id']) }}">Plot </a></td --> 
+			   <td> <a href="{{ url_for('edit', id=post['id']) }}">	Edit </a></td>
+			   <td> <a href="{{ url_for('crt_file', id=post['id']) }}">	Create File with Regions </a></td>
+			   <td><a href="{{ url_for('post', post_id=post['id']) }}">  {{ post['Id'] }} </a></td>
+			   <!--td> <a href="{{ url_for('kritiria', id=post['id']) }}">Create Regions </a></td> 
+			   <td><a href="{{ url_for('post_region', post_id=post['id']) }}">  {{ post['Id'] }} </a></td -->
+			   <td>{{post['created']}}</td>
+			   <td>{{post['title']}}</td>
+			   <!--td>{{post['content']}}</td>
+			   <td>{{post['raw_name']}}</td>
+			   <td>{{post['raw_start_time']}}</td>
+			   <td>{{post['raw_duration']}}</td>
+			   <td>{{post['raw_uuid']}}</td>
+			   <td>{{post['raw_frequency']}}</td>
+			   <td>{{post['raw_aont']}}</td>
+			   <td>{{post['raw_aofft']}}</td>
+			   <td>{{post['raw_sleep_diary']}}</td>
+			   <td>{{post['file_formats']}}</td -->
+		</tr>  
+		    {% endfor %} 		  
+		</tbody> 
+ </table>  
+	
+	
+{% endblock %}

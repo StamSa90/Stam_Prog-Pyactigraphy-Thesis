@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Καταχώρηση Νέου αρχείου {% endblock %}</h1>
+
+
+
+</script>
+<form method="post">
+    <div class="form-group row">
+        <label for="title"   class="col-sm-2 col-form-label">Ονομα Αρχείου</label>
+        <div class="col-sm-10">
+        <input type="file" name="title"    id="title"  
+               placeholder="Post title" class="file" 
+               value="{{ request.form['title'] }}" ></input>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="content"   class="col-sm-2 col-form-label">Περιγραφή Αρχείου</label>
+        <div class="col-sm-10">
+        <input name="content"  id="content" placeholder="Post content" 
+                  class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="File_Formats"  class="col-sm-2 col-form-label">File_Formats</label>
+       <div class="col-sm-10">
+      <select name="File_Formats" class="form-control form-control-sm"  placeholder=="ΔΩΣΕ File_Formats:" >
+        <option   selected="selected" value="">   </option>  
+        <option   value="agd">  agd (Actigraph) </option> 
+        <option   value="atr">  atr (ActTrust) </option>  
+        <option   value="awd">  awd (Actiwatch) </option>  
+        <option   value="bba">  bba (Axivity or GeneActiv via the Biobankaccelerom )</option>  
+        <option   value="dqt">  dqt (DaqTix) </option>  
+        <option   value="mesa">  mesa (MESA dataset, hosted by the NSRR) </option>  
+        <option   value="mtn">  mtn (MotionWatch8) </option>  
+        <option   value="rpx">  rpx (Respironics) </option>  
+        <option   value="tal">  tal (Tempatilumi) </option>  
+    </select>
+    </div>
+</div> 
+<hr>  
+    <div class="form-group">
+        <button type="submit"   class="btn btn-primary" >Submit</button>
+    </div>
+</form>
+
+{% endblock %}

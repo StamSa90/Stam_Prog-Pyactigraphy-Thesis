@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Parameters for Searching "{{ post['title'] }}" {% endblock %}</h1>
+
+<form method="post">
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">id</label>
+              <div class="col-sm-5">
+                     <input type="text" name="id" readonly="readonly" placeholder="id" class="form-control"
+                            value="{{ request.form['id'] or post['id'] }}">
+
+              </div>
+       </div>
+
+             <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">title</label>
+              <div class="col-sm-5">
+                     <input type="text" name="title" readonly="readonly" placeholder="title" class="form-control"
+                            value="{{ request.form['title'] or post['title'] }}">
+
+              </div>
+       </div>
+   
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_start_time</label>
+              <div class="col-sm-5">
+                     <input type="text" name="raw_start_time" placeholder="raw_start_time" class="form-control"
+                            value="{{ request.form['raw_start_time'] or post['raw_start_time'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_duration</label>
+              <div class="col-sm-5">
+                     <input type="text" name="raw_duration" placeholder="raw_duration" class="form-control"
+                            value="{{ request.form['raw_duration'] or post['raw_duration'] }}">
+
+              </div>
+       </div>
+       <div class="form-group row">
+              <label for="title" class="col-sm-1 col-form-label">file_formats</label>
+              <div class="col-sm-5">
+                     <input type="text" name="file_formats" placeholder="file_formats" class="form-control"
+                            readonly="readonly" value="{{ request.form['file_formats'] or post['file_formats'] }}">
+              </div>
+       </div>
+       <hr>      
+       <button type="submit" class="btn btn-primary">Plotting</button>
+       </div>
+</form>
+
+{% endblock %}

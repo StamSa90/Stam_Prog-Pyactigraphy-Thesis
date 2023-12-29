@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Regions for Excel  {% endblock %}</h1>
+	
+ 
+
+	  <table class="table table-hover">
+		<thead> 
+		<tr>   
+		       <th scope"col">edit </th>
+			   <th scope="col">read_excel_id</th>
+			   <th scope="col">new_excel_id</th>
+			   <th scope="col">start_date</th>
+			   <th scope="col">end_date</th>
+			   <th scope="col">Sleep_Wake</th>
+			   <th scope="col">Interval_Status</th>
+			  
+		</tr>    
+		</thead>
+		<tbody>  
+            
+			{% for post in posts %}
+			
+			
+		<tr>   
+			
+			  <td> <a href="{{ url_for('region_edit', id=post['id']) }}">	Edit</a></td>
+			   <td>{{post['read_excel_id']}}</td>
+			   <td>{{post['new_excel_id']}}</td>
+			   <td>{{post['start_date']}}</td>
+			   <td>{{post['end_date']}}</td>
+			   <td>{{post['Sleep_Wake']}}</td>
+			   <td>{{post['Interval_Status']}}</td>
+			  
+		</tr>  
+		    {% endfor %} 		  
+		</tbody> 
+ </table>  
+	
+	
+{% endblock %}

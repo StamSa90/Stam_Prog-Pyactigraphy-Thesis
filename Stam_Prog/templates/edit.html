@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Edit "{{ post['title'] }}" {% endblock %}</h1>
+
+<form method="post">
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">id</label>
+              <div class="col-sm-5">
+                     <input type="text" name="id" readonly="readonly" placeholder="id" class="form-control"
+                            value="{{ request.form['id'] or post['id'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">created</label>
+              <div class="col-sm-5">
+                     <input type="text" name="created" placeholder="created" class="form-control"
+                            value="{{ request.form['created'] or post['created'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">title</label>
+              <div class="col-sm-5">
+                     <input type="text" name="title" placeholder="title" class="form-control"
+                            value="{{ request.form['title'] or post['title'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">content</label>
+              <div class="col-sm-5">
+                     <input type="text" name="content" placeholder="content" class="form-control"
+                            value="{{ request.form['content'] or post['content'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_name</label>
+              <div class="col-sm-5">
+                     <input type="text" name="raw_name" placeholder="raw_name" class="form-control"
+                            value="{{ request.form['raw_name'] or post['raw_name'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_start_time</label>
+              <div class="col-sm-5">
+                     <input type="text" name="raw_start_time" placeholder="raw_start_time" class="form-control"
+                            value="{{ request.form['raw_start_time'] or post['raw_start_time'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_duration</label>
+              <div class="col-sm-5">
+                     <input type="text" name="raw_duration" placeholder="raw_duration" class="form-control"
+                            value="{{ request.form['raw_duration'] or post['raw_duration'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_uuid</label>
+              <div class="col-sm-5">
+                     <input type="text" name="raw_uuid" placeholder="raw_uuid" class="form-control"
+                            value="{{ request.form['raw_uuid'] or post['raw_uuid'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_frequency</label>
+              <div class="col-sm-5"> <input type="text" name="raw_frequency" placeholder="raw_frequency" class="form-control"
+                            value="{{ request.form['raw_frequency'] or post['raw_frequency'] }}">
+
+              </div>
+       </div>
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_aont</label>
+              <div class="col-sm-5"> <input type="text" name="raw_aont" placeholder="raw_aont" class="form-control"
+                            value="{{ request.form['raw_aont'] or post['raw_aont'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_aofft</label>
+              <div class="col-sm-5"> <input type="text" name="raw_aofft" placeholder="raw_aofft" class="form-control"
+                            value="{{ request.form['raw_aofft'] or post['raw_aofft'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">raw_sleep_diary</label>
+              <div class="col-sm-5"> <input type="text" name="raw_sleep_diary" placeholder="raw_sleep_diary"
+                            class="form-control"
+                            value="{{ request.form['raw_sleep_diary'] or post['raw_sleep_diary'] }}">
+
+              </div>
+       </div>
+
+       <div class="form-group row">
+              <label class="col-sm-1 col-form-label" for="title">file_formats</label>
+              <div class="col-sm-5"> <input type="text" name="file_formats" placeholder="file_formats"
+                            class="form-control" value="{{ request.form['file_formats'] or post['file_formats'] }}">
+
+              </div>
+       </div>
+
+
+
+
+       <button type="submit" class="btn btn-primary">Submit</button>
+       </div>
+</form>
+<hr>
+<form action="{{ url_for('delete', id=post['id']) }}" method="POST">
+       <div class="col-sm-5"> <input type="submit" value="Delete Post" class="btn btn-danger btn-sm"
+                     onclick="return confirm('Are you sure you want to delete this post?')">
+</form>
+{% endblock %}

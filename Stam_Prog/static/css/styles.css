@@ -1,0 +1,30 @@
+/* Styling for the DataTables */
+.data-table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Styling for the scatter plot */
+  .scatter-plot {
+    width: 100%;
+  }
+  
+  /* Additional styling */
+  hr {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  

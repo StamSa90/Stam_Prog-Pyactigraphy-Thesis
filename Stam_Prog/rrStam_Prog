@@ -1,0 +1,12 @@
+cd Stam_Prog 
+./Scripts/activate 
+py -m pip install --upgrade pip 
+py -m pip install flask 
+py -m pip install pandas 
+py -m pip install sqlite3 
+py -m pip install csv 
+py -m pip install plotly 
+py -m pip install matplotlib 
+py -m pip uninstall NumPy 
+py -m pip install NumPy==1.22.0 
+py -m pip install pyActigraphy 
